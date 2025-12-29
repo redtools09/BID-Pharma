@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BID Pharma - B.Pharm 5th Semester Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>BID Pharma</h1>
+                <p class="tagline">Smart Notes for Smart Students</p>
+            </div>
+            <nav class="nav">
+                <a href="#subjects">Subjects</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>B.Pharm 5th Semester Exam-Oriented Notes</h2>
+                <div class="features">
+                    <div class="feature">
+                        <i class="fas fa-file-alt"></i>
+                        <p>One-page, exam-oriented notes</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-chart-bar"></i>
+                        <p>Diagram-based for quick revision</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-question-circle"></i>
+                        <p>Important long & short questions</p>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <p>Easy language, last-minute friendly</p>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openDemo()">
+                        <i class="fas fa-eye"></i> Free Demo
+                    </button>
+                    <a href="#subjects" class="btn btn-secondary">
+                        <i class="fas fa-book"></i> View Subjects
+                    </a>
+                </div>
+                <div class="price-tag">
+                    <h3>Only ₹20 per subject</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Subjects Section -->
+    <section class="subjects" id="subjects">
+        <div class="container">
+            <h2 class="section-title">Available Subjects</h2>
+            <p class="section-subtitle">Click on any subject to get notes</p>
+            
+            <div class="subjects-grid">
+                <!-- Available Subject -->
+                <div class="subject-card available">
+                    <div class="subject-badge">Available</div>
+                    <h3>Pharmacognosy and Phytochemistry-II</h3>
+                    <p class="subject-description">Complete notes covering all important topics, diagrams, and exam questions.</p>
+                    <div class="subject-footer">
+                        <span class="price">₹20</span>
+                        <div id="pharmacognosy-button">
+                            <!-- Button will be updated by JS based on purchase status -->
+                            <button class="btn btn-buy" onclick="buyNotes('pharmacognosy')">
+                                Buy Notes
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Coming Soon Subjects -->
+                <div class="subject-card coming-soon">
+                    <div class="subject-badge">Coming Soon</div>
+                    <h3>Pharmaceutical Jurisprudence</h3>
+                    <p class="subject-description">Notes will be available soon.</p>
+                    <div class="subject-footer">
+                        <span class="price">₹20</span>
+                        <button class="btn btn-disabled" disabled>
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+
+                <div class="subject-card coming-soon">
+                    <div class="subject-badge">Coming Soon</div>
+                    <h3>Industrial Pharmacy-I</h3>
+                    <p class="subject-description">Notes will be available soon.</p>
+                    <div class="subject-footer">
+                        <span class="price">₹20</span>
+                        <button class="btn btn-disabled" disabled>
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+
+                <div class="subject-card coming-soon">
+                    <div class="subject-badge">Coming Soon</div>
+                    <h3>Pharmacology-II</h3>
+                    <p class="subject-description">Notes will be available soon.</p>
+                    <div class="subject-footer">
+                        <span class="price">₹20</span>
+                        <button class="btn btn-disabled" disabled>
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+
+                <div class="subject-card coming-soon">
+                    <div class="subject-badge">Coming Soon</div>
+                    <h3>Medicinal Chemistry-II</h3>
+                    <p class="subject-description">Notes will be available soon.</p>
+                    <div class="subject-footer">
+                        <span class="price">₹20</span>
+                        <button class="btn btn-disabled" disabled>
+                            Coming Soon
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Payment Instructions Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3>Complete Your Purchase</h3>
+            <div class="payment-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <p>Click the payment button below (you'll be redirected to Razorpay)</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <p>Complete the payment of ₹20</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <p>After payment, click the link that appears to access your notes</p>
+                </div>
+            </div>
+            <div class="payment-button-container">
+                <!-- REPLACE THIS WITH YOUR ACTUAL RAZORPAY/PABBLY PAYMENT LINK -->
+                <a href="https://your-razorpay-payment-link.com" 
+                   class="btn btn-payment" 
+                   target="_blank">
+                    <i class="fas fa-lock"></i> Pay ₹20 Now
+                </a>
+                <p class="payment-note">Secure payment via Razorpay</p>
+            </div>
+            <div class="after-payment">
+                <h4>Payment done?</h4>
+                <a href="success.html" class="btn btn-success">
+                    Click here to access your notes
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>BID Pharma</h3>
+                    <p>Quality notes for B.Pharm students</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms of Service</a>
+                    <a href="refund-policy.html">Refund Policy</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <a href="contact.html">Get in Touch</a>
+                    <p>Notes delivered instantly after payment</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BID Pharma. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function openDemo() {
+            window.open('demo-viewer.html', '_blank');
+        }
+        
+        function buyNotes(subject) {
+            document.getElementById('paymentModal').style.display = 'block';
+        }
+        
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+        
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('paymentModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
