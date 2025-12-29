@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Notes - BID Pharma</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="pdf-toolbar">
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 style="color: white; margin: 0;">
+                    <i class="fas fa-file-pdf"></i> Pharmacognosy & Phytochemistry-II Notes
+                </h2>
+                <a href="index.html" class="btn btn-secondary" style="padding: 8px 20px;">
+                    <i class="fas fa-home"></i> Home
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pdf-container">
+        <div id="size-warning" style="display: none; padding: 1rem; background: #fff3cd; color: #856404; text-align: center;">
+            <p><strong>Note:</strong> The PDF is loading. If it takes too long, we can split it into parts. <a href="contact.html">Contact us</a> for alternative access.</p>
+        </div>
+        
+        <!-- Replace with your actual PDF file -->
+        <iframe 
+            src="assets/pharmacognosy-notes.pdf" 
+            class="pdf-viewer"
+            title="Pharmacognosy Notes"
+            id="pdfFrame">
+        </iframe>
+        
+        <!-- Fallback message -->
+        <div id="pdf-fallback" style="display: none; text-align: center; padding: 3rem;">
+            <h3>PDF not loading?</h3>
+            <p>If the PDF doesn't load above, you can:</p>
+            <div style="margin: 2rem 0;">
+                <a href="assets/pharmacognosy-notes.pdf" class="btn btn-primary" target="_blank">
+                    <i class="fas fa-external-link-alt"></i> Open in New Tab
+                </a>
+            </div>
+            <p style="color: #666; font-size: 0.9rem;">
+                <i class="fas fa-info-circle"></i> Right-click and "Save As" is disabled to protect content.
+            </p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    <script>
+        // Check if PDF loaded successfully
+        setTimeout(function() {
+            const pdfFrame = document.getElementById('pdfFrame');
+            const fallback = document.getElementById('pdf-fallback');
+            
+            try {
+                // Try to access PDF content
+                if (pdfFrame.contentDocument.body.innerHTML === '') {
+                    fallback.style.display = 'block';
+                }
+            } catch (e) {
+                // Cross-origin error - PDF is loading
+                console.log('PDF is loading...');
+            }
+        }, 3000);
+    </script>
+</body>
+</html>
